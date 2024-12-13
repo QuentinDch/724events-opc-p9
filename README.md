@@ -1,8 +1,9 @@
+
 # 724Events-project
 
 Huitième projet du parcours **"Intégrateur web"** chez OpenClassroom. <br> L'objectif est de Débuggez le site d’une agence d’événementiel.
 
-![Image de présentation du projet]
+![preview-project-p9](https://github.com/user-attachments/assets/592a9a7c-4075-45cb-add8-deffaec38304)
 
 ## Objectifs du Projet
 
