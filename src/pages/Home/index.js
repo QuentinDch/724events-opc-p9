@@ -52,7 +52,11 @@ const Page = () => {
             </ServiceCard>
           </div>
         </section>
-        <section className="EventsContainer" id="nos-realisations">
+        <section
+          className="EventsContainer"
+          id="nos-realisations"
+          data-testid="events-container-testid"
+        >
           <h2 className="Title">Nos réalisations</h2>
           <EventList />
         </section>

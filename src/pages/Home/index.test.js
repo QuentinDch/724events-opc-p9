@@ -30,7 +30,11 @@ describe("When Form is created", () => {
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    // to implement
+    render(<Home />);
+    const eventsContainerElement = screen.getByTestId(
+      "events-container-testid"
+    );
+    expect(eventsContainerElement).toBeInTheDocument();
   });
   it("a list of people is displayed", () => {
     render(
@@ -52,9 +56,7 @@ describe("When a page is created", () => {
   it("a footer is displayed", () => {
     render(<Home />);
     const footerElement = screen.getByTestId("footer-testid");
-    const eventCardElement = screen.getByTestId("card-testid");
     expect(footerElement).toBeInTheDocument();
-    expect(eventCardElement).toBeInTheDocument();
   });
   it("an event card, with the last event, is displayed", () => {
     render(
