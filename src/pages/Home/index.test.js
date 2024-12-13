@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "./index";
 import PeopleCard from "../../components/PeopleCard";
+import EventCard from "../../components/EventCard";
 
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
@@ -49,9 +50,30 @@ describe("When a page is created", () => {
     expect(imageElement.alt).toEqual("image-alt-text");
   });
   it("a footer is displayed", () => {
-    // to implement
+    render(<Home />);
+    const footerElement = screen.getByTestId("footer-testid");
+    const eventCardElement = screen.getByTestId("card-testid");
+    expect(footerElement).toBeInTheDocument();
+    expect(eventCardElement).toBeInTheDocument();
   });
   it("an event card, with the last event, is displayed", () => {
-    // to implement
+    render(
+      <EventCard
+        imageSrc="http://src-image"
+        imageAlt="image-alt-text"
+        title="test title"
+        date={new Date("2022-08-01")}
+        label="test label"
+      />
+    );
+    const titleElement = screen.getByText(/test title/);
+    const labelElement = screen.getByText(/test label/);
+    const imageElement = screen.getByTestId("card-image-testid");
+    const eventDate = screen.getByText(/août/);
+    expect(titleElement).toBeInTheDocument();
+    expect(labelElement).toBeInTheDocument();
+    expect(imageElement).toBeInTheDocument();
+    expect(imageElement.alt).toEqual("image-alt-text");
+    expect(eventDate).toBeInTheDocument();
   });
 });
